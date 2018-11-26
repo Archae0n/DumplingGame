@@ -6,7 +6,7 @@ public class Dumplings : MonoBehaviour
 
     public GameObject dumplingScreen;
 
-    public Earning earning;
+    //public Earning earning;
 
     public BossButton money;
 

@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{64AB87EE-8244-B694-696C-63087AD05E54}</ProjectGuid>
+    <ProjectGuid>{B294608F-EB8C-6632-D14F-89D26DAF790E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,16 +67,16 @@
     <Compile Include="Assets\Scripts\Setting.cs" />
     <Compile Include="Assets\Scripts\UpgradeButton.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/GBlanchard/Downloads/GAM111.3/GAM111.3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/GBlanchard/Documents/GitHub/DumplingGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/GBlanchard/Downloads/GAM111.3/GAM111.3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/GBlanchard/Documents/GitHub/DumplingGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/GBlanchard/Downloads/GAM111.3/GAM111.3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/GBlanchard/Documents/GitHub/DumplingGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/GBlanchard/Downloads/GAM111.3/GAM111.3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/GBlanchard/Documents/GitHub/DumplingGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

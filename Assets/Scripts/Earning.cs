@@ -11,7 +11,7 @@ public class Earning : MonoBehaviour
 
     int buttonLevel;
 
-    public float money;
+    public static float money;
 
     public Text buttonLevelText;
 

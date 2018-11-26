@@ -7,8 +7,6 @@ public class UpgradeButton : MonoBehaviour
 
     public Text incomeLevel;
 
-    public Earning earning;
-
     public Text costText;
 
     float cost = 100;
@@ -28,14 +26,14 @@ public class UpgradeButton : MonoBehaviour
         upgradeLevel.text = upgradeButtonLevel.ToString();
         incomeLevel.text = incomeAmount.ToString();
         costText.text = cost.ToString("C0");
-        money = earning.money;
+        money = Earning.money;
     }
 
     public void UpgradeClicking()
     {
-        if (earning.money >= cost)
+        if (Earning.money >= cost)
         {
-            earning.money -= cost;
+            Earning.money -= cost;
             upgradeButtonLevel += 1;
             cost = cost * costMulti;
             incomeAmount = incomeAmount * incomeMulti;

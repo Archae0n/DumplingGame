@@ -14,17 +14,18 @@ public class BossButton : MonoBehaviour
 
     public float reward = 5;
 
-    public Earning earning;
-
     public UpgradeButton incomeLevel;
 
-    public int timer;
+    public float timer;
 
     public int maxTimer = 3;
+
+    public Slider waitTimer;
 
     void Update()
     {
         timertext.text = timer.ToString();
+        waitTimer.value = timer;
     }
 
 
@@ -52,7 +53,7 @@ public class BossButton : MonoBehaviour
         if(bossState == State.Reward)
         {
             float bonus = reward * incomeLevel.incomeAmount;
-            earning.money += bonus;
+            Earning.money += bonus;
             timer = maxTimer;
             bossState = State.Nothing;
         }
@@ -64,7 +65,7 @@ public class BossButton : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timer --;
-            if (timer == 0)
+            if (timer < 0)
             {
                 StopCoroutine("LoseTime");
                 bossState = State.Reward;
