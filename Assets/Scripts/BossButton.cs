@@ -10,6 +10,8 @@ public class BossButton : MonoBehaviour
 
     public Text timertext;
 
+    public Text rewardText;
+
     public State bossState = State.Nothing;
 
     public float reward = 5;
@@ -18,13 +20,14 @@ public class BossButton : MonoBehaviour
 
     public float timer;
 
-    public int maxTimer = 3;
+    public float maxTimer = 3;
 
     public Slider waitTimer;
 
     void Update()
     {
         timertext.text = timer.ToString();
+        rewardText.text = reward.ToString();
         waitTimer.value = timer;
     }
 
