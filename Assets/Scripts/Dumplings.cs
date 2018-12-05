@@ -10,6 +10,8 @@ public class Dumplings : MonoBehaviour
 
     public BossButton timer;
 
+    public DumplingCurrency dumplingCurrency;
+
     public float change;
 
     //Dealing with the text
@@ -95,9 +97,9 @@ public class Dumplings : MonoBehaviour
     {
         change = upgradeTimeChange;
 
-        if (Earning.money >= upgradeCost)
+        if (dumplingCurrency.dumplingCurrency >= upgradeCost)
         {
-            Earning.money -= upgradeCost;
+            dumplingCurrency.dumplingCurrency -= upgradeCost;
             money.reward = upgradeBonus;
             timer.maxTimer = upgradeTimeChange;
             timer.timer = change;
@@ -123,7 +125,7 @@ public class Dumplings : MonoBehaviour
             upgradeTimeChange = 1.5f;
         }
         
-        costText.text = upgradeCost.ToString("C0");
+        costText.text = upgradeCost.ToString("F0");
 
     }
 
@@ -131,9 +133,9 @@ public class Dumplings : MonoBehaviour
     {
         change = quickTimeChange;
 
-        if (Earning.money >= quickCost)
+        if (dumplingCurrency.dumplingCurrency >= quickCost)
         {
-            Earning.money -= quickCost;
+            dumplingCurrency.dumplingCurrency -= quickCost;
             money.reward = quickBonus;
             timer.maxTimer = quickTimeChange;
             timer.timer = change;
@@ -163,7 +165,7 @@ public class Dumplings : MonoBehaviour
             quickCost = 0;
         }
         
-        quickCostText.text = quickCost.ToString("C0");
+        quickCostText.text = quickCost.ToString("F0");
 
     }
 
@@ -171,9 +173,9 @@ public class Dumplings : MonoBehaviour
     {
         change = bigTimeChange;
 
-        if (Earning.money >= bigCost)
+        if (dumplingCurrency.dumplingCurrency >= bigCost)
         {
-            Earning.money -= bigCost;
+            dumplingCurrency.dumplingCurrency -= bigCost;
             money.reward = bigBonus;
             timer.maxTimer = bigTimeChange;
             timer.timer = change;
@@ -203,16 +205,16 @@ public class Dumplings : MonoBehaviour
             bigCost = 0;
         }
         
-        bigCostText.text = bigCost.ToString("C0");
+        bigCostText.text = bigCost.ToString("F0");
     }
 
     public void QueenDumpling()
     {
         change = queenTimeChange;
 
-        if (Earning.money >= queenCost)
+        if (dumplingCurrency.dumplingCurrency >= queenCost)
         {
-            Earning.money -= queenCost;
+            dumplingCurrency.dumplingCurrency -= queenCost;
             money.reward = queenBonus;
             timer.maxTimer = queenTimeChange;
             timer.timer = change;
@@ -242,6 +244,6 @@ public class Dumplings : MonoBehaviour
             queenCost = 0;
         }
         
-        queenCostText.text = queenCost.ToString("C0");
+        queenCostText.text = queenCost.ToString("F0");
     }
 }

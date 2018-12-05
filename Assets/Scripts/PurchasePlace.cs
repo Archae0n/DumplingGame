@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PurchasePlace : MonoBehaviour
 {
-    public int cost;
+    int africaCost = 25000;
+    int franceCost = 1000000;
+    int tokyoCost = 500000000;
 
     public GameObject unlock;
 
     //to make the player purchase different places
     public void Africa()
     {
-        cost = 25000;
 
-        if (Earning.money >= cost)
+        if (Earning.money >= africaCost)
         {
-            Earning.money -= cost;
+            Earning.money -= africaCost;
             unlock.SetActive(true);
             Destroy(gameObject);
         }
@@ -24,11 +25,10 @@ public class PurchasePlace : MonoBehaviour
 
     public void France()
     {
-        cost = 1000000;
 
-        if (Earning.money >= cost)
+        if (Earning.money >= franceCost)
         {
-            Earning.money -= cost;
+            Earning.money -= franceCost;
             unlock.SetActive(true);
             Destroy(gameObject);
         }
@@ -36,11 +36,10 @@ public class PurchasePlace : MonoBehaviour
 
     public void Tokyo()
     {
-        cost = 500000000;
 
-        if (Earning.money >= cost)
+        if (Earning.money >= tokyoCost)
         {
-            Earning.money -= cost;
+            Earning.money -= tokyoCost;
             unlock.SetActive(true);
             Destroy(gameObject);
         }
