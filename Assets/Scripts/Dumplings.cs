@@ -77,7 +77,7 @@ public class Dumplings : MonoBehaviour
         upgradedLevelText.text = upgradedLevel.ToString();
         quickLevelText.text = quickLevel.ToString();
         bigLevelText.text = bigLevel.ToString();
-        quickLevelText.text = quickLevel.ToString();
+        queenLevelText.text = queenLevel.ToString();
     }
 
     public void OpeningDumplingScreen()
