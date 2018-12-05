@@ -13,7 +13,7 @@ public class UpgradeButton : MonoBehaviour
 
     int upgradeButtonLevel;
 
-    float costMulti = 1.3f;
+    float costMulti = 1.15f;
 
     public float incomeAmount = 1;
 
@@ -24,7 +24,7 @@ public class UpgradeButton : MonoBehaviour
     void Update()
     {
         upgradeLevel.text = upgradeButtonLevel.ToString();
-        incomeLevel.text = incomeAmount.ToString();
+        incomeLevel.text = ( "x" + incomeAmount.ToString("F0"));
         costText.text = cost.ToString("C0");
         money = Earning.money;
     }
