@@ -26,8 +26,8 @@ public class BossButton : MonoBehaviour
 
     void Update()
     {
-        timertext.text = timer.ToString();
-        rewardText.text = reward.ToString();
+        timertext.text = timer.ToString("F2");
+        rewardText.text = reward.ToString("C0");
         waitTimer.value = timer;
     }
 

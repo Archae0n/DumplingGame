@@ -15,48 +15,69 @@ public class Dumplings : MonoBehaviour
     //Dealing with the text
     public Text costText;
 
-    public Text dumplingLevelText;
+    public Text upgradedLevelText;
+
+    public Text quickCostText;
+
+    public Text quickLevelText;
+
+    public Text bigCostText;
+
+    public Text bigLevelText;
+
+    public Text queenCostText;
+
+    public Text queenLevelText;
 
     //dumpling bonuses and cost
     #region cost bonus
-    float upgradeBonus = 20;
+    float upgradeBonus = 250;
 
-    float upgradeCost = 250;
+    float upgradeCost = 500;
 
     float upgradeTimeChange = 4;
 
-    float quickBonus = 10;
+    float quickBonus = 200;
 
-    float quickCost = 500;
+    float quickCost = 1000;
 
     float quickTimeChange = 2;
 
-    float bigBonus = 100;
+    float bigBonus = 750;
 
-    float bigCost = 1000;
+    float bigCost = 1500;
 
     float bigTimeChange = 30;
 
-    float queenBonus = 10000;
+    float queenBonus = 2500000;
 
-    float queenCost = 1000000;
+    float queenCost = 5000000;
 
     float queenTimeChange = 60;
     #endregion
 
     //setting up a leveling system for the dumplings
-    int dumplingLevel;
+    int upgradedLevel;
 
-    float costMulti = 1.1f;
+    int quickLevel;
 
-    float bonusUpgrade = 2.5f;
+    int bigLevel;
+
+    int queenLevel;
+
+    float costMulti = 1.75f;
+
+    float bonusUpgrade = 2;
 
     float timeLowered = 0.9f;
 
     void Update()
     {
         //costText.text = cost.ToString();
-        dumplingLevelText.text = dumplingLevel.ToString();
+        upgradedLevelText.text = upgradedLevel.ToString();
+        quickLevelText.text = quickLevel.ToString();
+        bigLevelText.text = bigLevel.ToString();
+        quickLevelText.text = quickLevel.ToString();
     }
 
     public void OpeningDumplingScreen()
@@ -71,7 +92,7 @@ public class Dumplings : MonoBehaviour
 
 
     public void UpgradedDumpling()
-    { 
+    {
         change = upgradeTimeChange;
 
         if (Earning.money >= upgradeCost)
@@ -80,29 +101,30 @@ public class Dumplings : MonoBehaviour
             money.reward = upgradeBonus;
             timer.maxTimer = upgradeTimeChange;
             timer.timer = change;
-            dumplingLevel += 1;
+            upgradedLevel += 1;
             upgradeCost = upgradeCost * costMulti;
             upgradeBonus = upgradeBonus * bonusUpgrade;
             upgradeTimeChange = upgradeTimeChange * timeLowered;
         }
-
-        if(upgradeTimeChange <= 1)
+        
+        if (upgradedLevel >= 10)
         {
-            upgradeTimeChange = 1;
-        }
-
-        if(upgradeBonus >= 100000)
-        {
-            upgradeBonus = 100000;
-        }
-
-        if(dumplingLevel >= 15)
-        {
-            dumplingLevel = 15;
+            upgradedLevel = 10;
             upgradeCost = 0;
         }
 
-        costText.text = upgradeCost.ToString();
+        if (upgradeBonus >= 128000)
+        {
+            upgradeBonus = 135000;
+        }
+
+        if (upgradeTimeChange <= 1.6)
+        {
+            upgradeTimeChange = 1.5f;
+        }
+        
+        costText.text = upgradeCost.ToString("C0");
+
     }
 
     public void QuickDumpling()
@@ -115,7 +137,7 @@ public class Dumplings : MonoBehaviour
             money.reward = quickBonus;
             timer.maxTimer = quickTimeChange;
             timer.timer = change;
-            dumplingLevel += 1;
+            quickLevel += 1;
             quickCost = quickCost * costMulti;
             quickBonus = quickBonus * bonusUpgrade;
             quickTimeChange = quickTimeChange * timeLowered;
@@ -124,24 +146,24 @@ public class Dumplings : MonoBehaviour
         {
             return;
         }
-
-        if (quickTimeChange <= 1)
+        
+        if (quickTimeChange <= 0.8f)
         {
-            quickTimeChange = 1;
+            quickTimeChange = 0.5f;
         }
 
-        if (quickBonus >= 100000)
+        if (quickBonus >= 102400)
         {
-            quickBonus = 100000;
+            quickBonus = 125000;
         }
 
-        if (dumplingLevel >= 15)
+        if (quickLevel >= 10)
         {
-            dumplingLevel = 15;
+            quickLevel = 10;
             quickCost = 0;
         }
-
-        costText.text = quickCost.ToString();
+        
+        quickCostText.text = quickCost.ToString("C0");
 
     }
 
@@ -155,7 +177,7 @@ public class Dumplings : MonoBehaviour
             money.reward = bigBonus;
             timer.maxTimer = bigTimeChange;
             timer.timer = change;
-            dumplingLevel += 1;
+            bigLevel += 1;
             bigCost = bigCost * costMulti;
             bigBonus = bigBonus * bonusUpgrade;
             bigTimeChange = bigTimeChange * timeLowered;
@@ -164,24 +186,24 @@ public class Dumplings : MonoBehaviour
         {
             return;
         }
-
-        if (bigTimeChange <= 1)
+        
+        if (bigTimeChange <= 12)
         {
-            bigTimeChange = 1;
+            bigTimeChange = 10;
         }
 
-        if (bigBonus >= 100000)
+        if (bigBonus >= 380000)
         {
-            bigBonus = 100000;
+            bigBonus = 500000;
         }
 
-        if (dumplingLevel >= 15)
+        if (bigLevel >= 10)
         {
-            dumplingLevel = 15;
+            bigLevel = 10;
             bigCost = 0;
         }
-
-        costText.text = bigCost.ToString();
+        
+        bigCostText.text = bigCost.ToString("C0");
     }
 
     public void QueenDumpling()
@@ -194,7 +216,7 @@ public class Dumplings : MonoBehaviour
             money.reward = queenBonus;
             timer.maxTimer = queenTimeChange;
             timer.timer = change;
-            dumplingLevel += 1;
+            queenLevel += 1;
             queenCost = queenCost * costMulti;
             queenBonus = queenBonus * bonusUpgrade;
             queenTimeChange = queenTimeChange * timeLowered;
@@ -203,23 +225,23 @@ public class Dumplings : MonoBehaviour
         {
             return;
         }
-
-        if (queenTimeChange <= 1)
+        
+        if (queenTimeChange <= 24)
         {
-            queenTimeChange = 1;
+            queenTimeChange = 20;
         }
 
-        if (queenBonus >= 100000)
+        if (queenBonus >= 1270000000)
         {
-            queenBonus = 100000;
+            queenBonus = 1500000000;
         }
 
-        if (dumplingLevel >= 15)
+        if (queenLevel >= 10)
         {
-            dumplingLevel = 15;
+            queenLevel = 10;
             queenCost = 0;
         }
-
-        costText.text = queenCost.ToString();
+        
+        queenCostText.text = queenCost.ToString("C0");
     }
 }
