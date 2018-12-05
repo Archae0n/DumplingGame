@@ -17,7 +17,19 @@ public class Earning : MonoBehaviour
 
     float cost = 10;
 
-    float costMultiplier = 1.3f;
+    float costMultiplier = 1.15f;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("Money"))
+        {
+            money = PlayerPrefs.GetFloat("Money");
+        }
+        else
+        {
+            money = 0f;
+        }
+    }
 
     void Update()
     {
@@ -29,6 +41,10 @@ public class Earning : MonoBehaviour
         buttonLevelText.text = buttonLevel.ToString();
 
         money += Time.deltaTime * bonus;
+
+        MoneyCheck();
+
+        PlayerPrefs.SetFloat("Money", money);
     }
 
     public void ButtonLevel()
@@ -41,6 +57,39 @@ public class Earning : MonoBehaviour
         
         }
         
+    }
+
+    public void MoneyCheck()
+    {
+        if (money >= 1000)
+        {
+            currency.text = (money * 0.001f).ToString("C2") + "Tho";
+
+            if (money >= 1000000)
+            {
+                currency.text = (money * 0.000001f).ToString("C2") + "Mil";
+
+                if (money >= 1000000000)
+                {
+                    currency.text = (money * 0.000000001f).ToString("C2") + "Bil";
+
+                    if (money >= 1000000000000)
+                    {
+                        currency.text = (money * 0.000000000001f).ToString("C2") + "Tri";
+
+                        if (money >= 1000000000000000)
+                        {
+                            currency.text = (money * 0.000000000000001f).ToString("C2") + "Qua";
+
+                            if (money >= 1000000000000000000)
+                            {
+                                currency.text = (money * 0.000000000000000001f).ToString("C2") + "Qui";
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 	
 }

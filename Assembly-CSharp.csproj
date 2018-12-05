@@ -61,10 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PurchasePlace.cs" />
     <Compile Include="Assets\Scripts\BossButton.cs" />
     <Compile Include="Assets\Scripts\Dumplings.cs" />
     <Compile Include="Assets\Scripts\Earning.cs" />
+    <Compile Include="Assets\Scripts\OfflineEarnings.cs" />
+    <Compile Include="Assets\Scripts\PurchasePlace.cs" />
     <Compile Include="Assets\Scripts\Setting.cs" />
     <Compile Include="Assets\Scripts\UpgradeButton.cs" />
     <Reference Include="UnityEditor.StandardEvents">

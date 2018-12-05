@@ -11,13 +11,13 @@ public class UpgradeButton : MonoBehaviour
 
     float cost = 100;
 
-    int upgradeButtonLevel;
+    int upgradeButtonLevel = 1;
 
     float costMulti = 1.15f;
 
     public float incomeAmount = 1;
 
-    float incomeMulti = 1.1f;
+    //float incomeMulti = 1.1f;
 
     public float money;
 
@@ -27,6 +27,7 @@ public class UpgradeButton : MonoBehaviour
         incomeLevel.text = ( "x" + incomeAmount.ToString("F0"));
         costText.text = cost.ToString("C0");
         money = Earning.money;
+        MaxUpgrade();
     }
 
     public void UpgradeClicking()
@@ -36,7 +37,17 @@ public class UpgradeButton : MonoBehaviour
             Earning.money -= cost;
             upgradeButtonLevel += 1;
             cost = cost * costMulti;
-            incomeAmount = incomeAmount * incomeMulti;
+            incomeAmount = incomeAmount+= 1;
+        }
+    }
+
+    public void MaxUpgrade()
+    {
+        if (upgradeButtonLevel >= 50)
+        {
+            upgradeButtonLevel = 50;
+            incomeAmount = 50;
+            cost = 0;
         }
     }
 }

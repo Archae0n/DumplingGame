@@ -1010,7 +1010,7 @@ MonoBehaviour:
   timertext: {fileID: 1479816464}
   rewardText: {fileID: 1507595377}
   bossState: 2
-  reward: 10000
+  reward: 5
   incomeLevel: {fileID: 1877025268}
   timer: 3
   maxTimer: 3
@@ -3098,7 +3098,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: x1
 --- !u!222 &697585237
 CanvasRenderer:
   m_ObjectHideFlags: 0
