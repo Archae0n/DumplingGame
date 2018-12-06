@@ -10,8 +10,6 @@ public class Dumplings : MonoBehaviour
 
     public BossButton timer;
 
-    public DumplingCurrency dumplingCurrency;
-
     public float change;
 
     //Dealing with the text
@@ -35,13 +33,13 @@ public class Dumplings : MonoBehaviour
     #region cost bonus
     float upgradeBonus = 250;
 
-    float upgradeCost = 500;
+    float upgradeCost = 100;
 
     float upgradeTimeChange = 4;
 
     float quickBonus = 200;
 
-    float quickCost = 1000;
+    float quickCost = 500;
 
     float quickTimeChange = 2;
 
@@ -53,7 +51,7 @@ public class Dumplings : MonoBehaviour
 
     float queenBonus = 2500000;
 
-    float queenCost = 5000000;
+    float queenCost = 1000000;
 
     float queenTimeChange = 60;
     #endregion
@@ -97,9 +95,9 @@ public class Dumplings : MonoBehaviour
     {
         change = upgradeTimeChange;
 
-        if (dumplingCurrency.dumplingCurrency >= upgradeCost)
+        if (DumplingCurrency.dumplingCurrency >= upgradeCost)
         {
-            dumplingCurrency.dumplingCurrency -= upgradeCost;
+            DumplingCurrency.dumplingCurrency -= upgradeCost;
             money.reward = upgradeBonus;
             timer.maxTimer = upgradeTimeChange;
             timer.timer = change;
@@ -133,9 +131,9 @@ public class Dumplings : MonoBehaviour
     {
         change = quickTimeChange;
 
-        if (dumplingCurrency.dumplingCurrency >= quickCost)
+        if (DumplingCurrency.dumplingCurrency >= quickCost)
         {
-            dumplingCurrency.dumplingCurrency -= quickCost;
+            DumplingCurrency.dumplingCurrency -= quickCost;
             money.reward = quickBonus;
             timer.maxTimer = quickTimeChange;
             timer.timer = change;
@@ -173,9 +171,9 @@ public class Dumplings : MonoBehaviour
     {
         change = bigTimeChange;
 
-        if (dumplingCurrency.dumplingCurrency >= bigCost)
+        if (DumplingCurrency.dumplingCurrency >= bigCost)
         {
-            dumplingCurrency.dumplingCurrency -= bigCost;
+            DumplingCurrency.dumplingCurrency -= bigCost;
             money.reward = bigBonus;
             timer.maxTimer = bigTimeChange;
             timer.timer = change;
@@ -212,9 +210,9 @@ public class Dumplings : MonoBehaviour
     {
         change = queenTimeChange;
 
-        if (dumplingCurrency.dumplingCurrency >= queenCost)
+        if (DumplingCurrency.dumplingCurrency >= queenCost)
         {
-            dumplingCurrency.dumplingCurrency -= queenCost;
+            DumplingCurrency.dumplingCurrency -= queenCost;
             money.reward = queenBonus;
             timer.maxTimer = queenTimeChange;
             timer.timer = change;
