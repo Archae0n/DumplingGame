@@ -34,6 +34,7 @@ public class Purchase : MonoBehaviour, IStoreListener
     public static string Product_299_99 = "consumable";
     public static string kProductIDNonConsumable = "nonconsumable";
     public static string kProductIDSubscription = "subscription";
+    //public static string StandardPurchasingModule;
 
     // Google Play Store-specific product identifier subscription product.
     //private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";

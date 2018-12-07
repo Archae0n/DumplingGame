@@ -9,7 +9,7 @@ public class Earning : MonoBehaviour
 
     public UpgradeButton incomeLevel;
 
-    int buttonLevel;
+    public int buttonLevel;
 
     public static float money;
 
@@ -19,7 +19,7 @@ public class Earning : MonoBehaviour
 
     float costMultiplier = 1.15f;
 
-    /*private void Awake()
+    private void Awake()
     {
         if (PlayerPrefs.HasKey("Money"))
         {
@@ -29,7 +29,15 @@ public class Earning : MonoBehaviour
         {
             money = 0f;
         }
-    }*/
+        if (PlayerPrefs.HasKey("WorkerLevel"))
+        {
+            buttonLevel = PlayerPrefs.GetInt("WorkerLevel");
+        }
+        else
+        {
+            buttonLevel = 0;
+        }
+    }
 
     void Update()
     {
@@ -44,7 +52,8 @@ public class Earning : MonoBehaviour
 
         MoneyCheck();
 
-        //PlayerPrefs.SetFloat("Money", money);
+        PlayerPrefs.SetFloat("Money", money);
+        PlayerPrefs.SetInt("WorkerLevel", buttonLevel);
     }
 
     public void ButtonLevel()
@@ -61,26 +70,25 @@ public class Earning : MonoBehaviour
 
     public void MoneyCheck()
     {
+        if (money >= 1000000000)
+        {
+            currency.text = (money * 0.000000001f).ToString("C2") + "B";
 
-                if (money >= 1000000000)
+            if (money >= 1000000000000)
+            { 
+                currency.text = (money * 0.000000000001f).ToString("C2") + "T";
+
+                if (money >= 1000000000000000)
                 {
-                    currency.text = (money * 0.000000001f).ToString("C2") + "B";
+                    currency.text = (money * 0.000000000000001f).ToString("C2") + "Qa";
 
-                    if (money >= 1000000000000)
+                    if (money >= 1000000000000000000)
                     {
-                        currency.text = (money * 0.000000000001f).ToString("C2") + "T";
-
-                        if (money >= 1000000000000000)
-                        {
-                            currency.text = (money * 0.000000000000001f).ToString("C2") + "Qa";
-
-                            if (money >= 1000000000000000000)
-                            {
-                                currency.text = (money * 0.000000000000000001f).ToString("C2") + "Qi";
-                            }
-                        }
+                        currency.text = (money * 0.000000000000000001f).ToString("C2") + "Qi";
                     }
                 }
             }
-        	
+        }
+    }
+    
 }
