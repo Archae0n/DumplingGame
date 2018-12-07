@@ -90,7 +90,9 @@ public class Dumplings : MonoBehaviour
         dumplingScreen.SetActive(false);
     }
 
-
+    //For each of them, we have many it so you can not only purchase them,
+    //but to also upgrade them. That way the player can earn more.
+    #region Upgrading Dumplings
     public void UpgradedDumpling()
     {
         change = upgradeTimeChange;
@@ -244,4 +246,5 @@ public class Dumplings : MonoBehaviour
         
         queenCostText.text = queenCost.ToString("F0");
     }
+    #endregion
 }

@@ -7,9 +7,10 @@ public class PurchasePlace : MonoBehaviour
     int africaCost = 25000;
     int franceCost = 1000000;
     int tokyoCost = 500000000;
+    int washingtonDCCost = 900000000;
 
     public GameObject unlock;
-
+    
     //to make the player purchase different places
     public void Africa()
     {
@@ -40,6 +41,17 @@ public class PurchasePlace : MonoBehaviour
         if (Earning.money >= tokyoCost)
         {
             Earning.money -= tokyoCost;
+            unlock.SetActive(true);
+            Destroy(gameObject);
+        }
+    }
+
+    public void WashingtonDC()
+    {
+
+        if (Earning.money >= washingtonDCCost)
+        {
+            Earning.money -= washingtonDCCost;
             unlock.SetActive(true);
             Destroy(gameObject);
         }

@@ -43,10 +43,10 @@ public class UpgradeButton : MonoBehaviour
 
     public void MaxUpgrade()
     {
-        if (upgradeButtonLevel >= 50)
+        if (upgradeButtonLevel >= 20)
         {
-            upgradeButtonLevel = 50;
-            incomeAmount = 50;
+            upgradeButtonLevel = 20;
+            incomeAmount = 20;
             cost = 0;
         }
     }
